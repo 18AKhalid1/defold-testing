@@ -1,0 +1,4 @@
+images {
+  image: "/assets/drag car 1.png"
+}
+extrude_borders: 2
