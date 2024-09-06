@@ -1,5 +1,8 @@
 function on_message(self, message_id, message, sender)
 	if message_id == hash("collision_response") then
-		os.exit()
+		local t2 = os.clock()
+		local diff = os.difftime(t2, t1)
+		print(diff)
+		--os.exit()
 	end
 end

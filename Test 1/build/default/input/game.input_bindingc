@@ -7,4 +7,5 @@
 	Rdown2
 	Sleft2
 
-Tright2	touch
+Tright2
+$shift_up	touch

@@ -2,22 +2,39 @@ function init(self)
 	msg.post(".", "acquire_input_focus")
 end
 
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("start") then
+		t1 = os.clock()
+		msg.post("#fl", "t1")
+	end
+end
+
+
+
+local Current = 1
 function on_input(self, action_id, action)
+	local Gears = {5,10,15,20,25}
+	local Speed = Gears[Current]
 	if action_id == hash("left") then
 		local pos = go.get_position()
-		pos.x = pos.x - 10
+		pos.x = pos.x - Speed
 		go.set_position(pos)
 	elseif action_id == hash("right") then
 		local pos = go.get_position()
-		pos.x = pos.x + 10
+		pos.x = pos.x + Speed
 		go.set_position(pos)
 	elseif action_id == hash("up") then
 		local pos = go.get_position()
-		pos.y = pos.y + 10
+		pos.y = pos.y + Speed
 		go.set_position(pos)
 	elseif action_id == hash("down") then
 		local pos = go.get_position()
-		pos.y = pos.y - 10
+		pos.y = pos.y - Speed
 		go.set_position(pos)
+	elseif action_id == hash("shift_up") then
+		Current = Current + 1
+		Speed = Gears[Current]
+		pprint(Current,Speed) --added for debugging why the code wasnt working
 	end
 end
