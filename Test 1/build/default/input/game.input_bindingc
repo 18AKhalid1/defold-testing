@@ -8,4 +8,6 @@
 	Sleft2
 
 Tright2
-$shift_up	touch
+$shift_up
+0
+shift_down	touch

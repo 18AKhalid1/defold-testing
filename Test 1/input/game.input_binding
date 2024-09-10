@@ -34,6 +34,10 @@ key_trigger {
   input: KEY_E
   action: "shift_up"
 }
+key_trigger {
+  input: KEY_Q
+  action: "shift_down"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_1
   action: "touch"

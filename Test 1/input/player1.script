@@ -33,8 +33,16 @@ function on_input(self, action_id, action)
 		pos.y = pos.y - Speed
 		go.set_position(pos)
 	elseif action_id == hash("shift_up") then
-		Current = Current + 1
-		Speed = Gears[Current]
-		pprint(Current,Speed) --added for debugging why the code wasnt working
+		if action.pressed then
+			Current = Current + 1
+			Speed = Gears[Current]
+			pprint(Current,Speed) --added for debugging why the code wasnt working
+		end
+	elseif action_id == hash("shift_down") then
+		if action.pressed then
+			Current = Current - 1
+			Speed = Gears[Current]
+			pprint(Current,Speed)
+		end
 	end
 end
